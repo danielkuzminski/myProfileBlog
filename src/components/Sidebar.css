@@ -1,0 +1,50 @@
+.sidebar {
+    flex: 3;
+}
+
+.sidebarItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebarTitle {
+    text-transform: uppercase;
+    color: #444;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    margin: 12px 0;
+    border-bottom: 1px solid #444;
+    border-top: 1px solid #444;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.sidebarItemText {
+    width: 90%;
+    padding: 10px 0;
+    color: #444;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.sidebarImg {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 20px; 
+}
+
+.sidebarSocial {
+    padding: 10px 0;
+}
+
+.sidebarIcon {
+    color: #444;
+    margin: 0 5px;
+    font-size: 40px;
+}
