@@ -12,7 +12,7 @@ export default function TopMenu() {
       </div>
       <div className="topCenter">
         <ul className="topList">
-          <li className="topListItem">Domowa</li>
+          <li className="topListItem">Home</li>
           <li className="topListItem">React</li>
           <li className="topListItem">Firebase</li>
           <li className="topListItem">Web-dev</li>
