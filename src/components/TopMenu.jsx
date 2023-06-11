@@ -1,3 +1,6 @@
+//react
+import { useState } from "react"
+
 //styles
 import "./TopMenu.css"
 
@@ -6,8 +9,11 @@ import profile from "../assets/profil.jpg"
 
 //router
 import { NavLink, Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function TopMenu() {
+	const navigate = useNavigate()
+
 	return (
 		<div className='top'>
 			<div className='topLeft'>
@@ -33,7 +39,7 @@ export default function TopMenu() {
 				</ul>
 			</div>
 			<div className='topRight'>
-				<img className='topImg' src={profile} alt='this is us' />
+				<img className='topImg' onClick={() => {navigate('/login')}} src={profile} alt='this is us' />
 			</div>
 		</div>
 	)
