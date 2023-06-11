@@ -7,7 +7,7 @@
 
 .singlePost {
     width: 600px;
-    margin: 25px 25px 25px 100px;
+    margin: 25px 25px 45px 100px;
 }
 
 .postTitle {
@@ -29,10 +29,3 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
-/* 
-<div className='posts'>{posts.map((post) => (
-      <div key={post.id} className='singlePost'>
-        <span className='postTitle'>{post.title}</span>
-        <p className='postText'>{post.body}</p>
-      </div>
-*/

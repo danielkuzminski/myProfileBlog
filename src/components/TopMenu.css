@@ -47,14 +47,13 @@
 
 .topListItem {
     font-size: 18px;
-    margin-right: 20px;
     font-weight: 300;
     cursor: pointer;
 }
 
-.searchIcon {
-    font-size: 18px;
-    cursor: pointer;
+.navigationLink {
+    text-decoration: none;
     color: #444;
-    margin-left: 15px;
+    margin-right: 20px;
+
 }

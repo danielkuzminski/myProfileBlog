@@ -13,3 +13,7 @@ all text
 * {
 	margin: 0;
 }
+
+html {
+    overflow-y: overlay;
+}

@@ -9,7 +9,7 @@ import Sidebar from "../../components/Sidebar"
 export default function Home() {
 	return (
 		<>
-			<Header />
+			{/* <Header /> */}
 			<div className='home'>
 				<Posts />
 				<Sidebar />
