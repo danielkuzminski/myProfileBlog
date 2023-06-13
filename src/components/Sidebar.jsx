@@ -1,11 +1,17 @@
+//styles
 import "./Sidebar.css"
+
+//router
+import { Link } from "react-router-dom"
+
+//assets
 import profile from "../assets/profil.jpg"
 
 export default function Sidebar() {
 	return (
 		<div className='sidebar'>
 			<div className='sidebarItem'>
-				<span className='sidebarTitle'>About me</span>
+				<Link className="aboutMeLink" to='/about-me'><span className='sidebarTitle'>About me</span></Link>
 				<img className='sidebarImg' src={profile} alt='a picture of me' />
 				<p className='sidebarItemText'>
 					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam eius
