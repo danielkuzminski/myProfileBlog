@@ -1,8 +1,11 @@
 //styles
-import './AboutFirebase'
+import "./AboutFirebase"
 
 export default function AboutFirebase() {
-  return (
-    <div>AboutFirebase</div>
-  )
+	return (
+		<div>
+			AboutFirebase
+			{/* fetch content about firebase only */}
+		</div>
+	)
 }

@@ -1,7 +1,10 @@
-import './AboutWeb.css'
+import "./AboutWeb.css"
 
 export default function AboutWeb() {
-  return (
-    <div>AboutWeb</div>
-  )
+	return (
+		<div>
+			AboutWeb
+			{/* fetch contaent about web dev */}
+		</div>
+	)
 }

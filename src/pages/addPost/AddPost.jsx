@@ -40,7 +40,7 @@ export default function AddPost() {
 	return (
 		<div className="addPost">
 			<span onClick={() => {navigate(-1)}} className="loginClose"><i class="fa-solid fa-angles-left"></i></span>
-			<form onClick={handleSubmit} className='addPostForm'>
+			<form onSubmit={handleSubmit} className='addPostForm'>
 				<label className="loginLabel">
 					<span>title:</span>
 					<input 

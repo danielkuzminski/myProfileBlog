@@ -21,13 +21,17 @@ export default function Login() {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 
+		//add pending, error states
+
+		//add try/catch async login function
+
         resetForm()
 	}
 
 	return (
 		<div className="login">
             <span onClick={() => {navigate(-1)}} className="loginClose"><i class="fa-solid fa-angles-left"></i></span>
-			<form className='loginForm'>
+			<form onSubmit={handleSubmit} className='loginForm'>
 				<label className="loginLabel">
 					<span><i class="fa-regular fa-envelope"></i> Email:</span>
 					<input type='email' />
