@@ -36,7 +36,7 @@ export default function Login() {
 					<span><i class="fa-solid fa-key"></i> Password:</span>
 					<input type='password' />
 				</label>
-				<button>Submit</button>
+				<button className="SubmitBtn">Submit</button>
 			</form>
 		</div>
 	)

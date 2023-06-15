@@ -12,6 +12,7 @@ import AboutFirebase from './pages/aboutFirebase/AboutFirebase';
 import AboutWeb from './pages/aboutWeb/AboutWeb'
 import Login from './pages/login/Login';
 import AboutMe from './pages/aboutMe/AboutMe';
+import AddPost from './pages/addPost/AddPost';
 
 //router
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -29,6 +30,7 @@ function App() {
           <Route path='/web-dev' element={<AboutWeb />} />
           <Route path='/login' element={<Login />} />
           <Route path='/about-me' element={<AboutMe />} />
+          <Route path='/add-post' element={<AddPost />} />
         </Routes>
         
       </BrowserRouter>
