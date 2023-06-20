@@ -7,14 +7,15 @@ import "./AddPost.css"
 import { useNavigate } from "react-router-dom"
 
 export default function AddPost() {
-	const [title, setTitle] = useState('')
-	const [article, setArticle] = useState('')
-	const [topic, setTopic] = useState('')
+	const navigate = useNavigate()
+	const [title, setTitle] = useState("")
+	const [article, setArticle] = useState("")
+	const [tag, setTag] = useState("")
 
 	const resetForm = () => {
-		setTitle('')
-		setArticle('')
-		setTopic('')
+		setTitle("")
+		setArticle("")
+		setTag('')
 	}
 
 	const handleSubmit = async (e) => {
@@ -24,7 +25,7 @@ export default function AddPost() {
 		const data = {
 			title,
 			article,
-			topic,
+			tag,
 			// add random id in submit handler
 		}
 
@@ -35,17 +36,21 @@ export default function AddPost() {
 		resetForm()
 	}
 
-	const navigate = useNavigate()
-
 	return (
-		<div className="addPost">
-			<span onClick={() => {navigate(-1)}} className="loginClose"><i class="fa-solid fa-angles-left"></i></span>
+		<div className='addPost'>
+			<span
+				onClick={() => {
+					navigate(-1)
+				}}
+				className='loginClose'>
+				<i class='fa-solid fa-angles-left'></i>
+			</span>
 			<form onSubmit={handleSubmit} className='addPostForm'>
-				<label className="loginLabel">
+				<label className='loginLabel'>
 					<span>title:</span>
-					<input 
-						type='text' 
-						className="addPostInput"
+					<input
+						type='text'
+						className='addPostInput'
 						onChange={(e) => {
 							setTitle(e.target.value)
 						}}
@@ -53,23 +58,23 @@ export default function AddPost() {
 						value={title}
 					/>
 				</label>
-				<label className="loginLabel">
+				<label className='loginLabel'>
 					<span>article:</span>
-					<textarea 
-						className="addPostInput" 
+					<textarea
+						className='addPostInput'
 						onChange={(e) => {
-							setTitle(e.target.value)
+							setArticle(e.target.value)
 						}}
 						required
-						value={title}
-					></textarea>
+						value={article}></textarea>
 				</label>
+				
 				<label className="loginLabel">
 					<span>topic:</span>
 					<select 
 						className="addPostSelect"
 						onChange={(e) => {
-							setTopic(e.target.value)
+							setTag(e.target.value)
 						}}
 					>
 						<option value='react'>react</option>
@@ -77,7 +82,7 @@ export default function AddPost() {
 						<option value='web-dev'>web-dev</option>
 					</select>
 				</label>
-				<button className="SubmitBtn">submit</button>
+				<button className='SubmitBtn'>submit</button>
 			</form>
 		</div>
 	)

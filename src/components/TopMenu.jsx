@@ -1,6 +1,3 @@
-//react
-import { useState } from "react"
-
 //styles
 import "./TopMenu.css"
 
@@ -11,8 +8,14 @@ import profile from "../assets/profil.jpg"
 import { NavLink, Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
+//hooks
+import { useAuthContext } from "../hooks/useAuthContext"
+import { useLogout } from "../hooks/useLogout"
+
 export default function TopMenu() {
 	const navigate = useNavigate()
+	const {user} = useAuthContext()
+	const {logout} = useLogout()
 
 	return (
 		<div className='top'>
@@ -40,6 +43,7 @@ export default function TopMenu() {
 			</div>
 			<div className='topRight'>
 				<img className='topImg' onClick={() => {navigate('/login')}} src={profile} alt='this is us' />
+				{user && (<span className="logout-btn" onClick={logout}>wyloguj <i className="fa-solid fa-arrow-right-from-bracket"></i></span>)}
 			</div>
 		</div>
 	)

@@ -11,13 +11,19 @@ import AboutReact from './pages/aboutReact/AboutReact';
 import AboutFirebase from './pages/aboutFirebase/AboutFirebase';
 import AboutWeb from './pages/aboutWeb/AboutWeb'
 import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
 import AboutMe from './pages/aboutMe/AboutMe';
 import AddPost from './pages/addPost/AddPost';
 
 //router
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
+//hooks
+import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
+  const {user} = useAuthContext()
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -28,11 +34,11 @@ function App() {
           <Route path='/react' element={<AboutReact />} />
           <Route path='/firebase' element={<AboutFirebase />} />
           <Route path='/web-dev' element={<AboutWeb />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={user ? <Navigate to='/' /> : <Login />} />
+          <Route path='/signup' element={user ? <Navigate to='/' /> : <Signup />} />
           <Route path='/about-me' element={<AboutMe />} />
-          <Route path='/add-post' element={<AddPost />} />
-        </Routes>
-        
+          <Route path='/add-post' element={user ? <AddPost /> : <Navigate to='/' />} />
+        </Routes>   
       </BrowserRouter>
     </div>
   );
