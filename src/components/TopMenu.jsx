@@ -46,7 +46,7 @@ export default function TopMenu() {
 			</div>
 			<div className='topRight'>
 				<img className='topImg' onClick={() => {navigate('/login')}} src={profile} alt='this is us' />
-				{user && (<span className="logout-btn" onClick={logout}><i style={{fontSize: "24px"}} className="fa-solid fa-arrow-right-from-bracket"></i></span>)}
+				{user && (<span className="logout-btn" onClick={logout}><li className="topListItem">Logout</li></span>)}
 			</div>
 		</div>
 	)

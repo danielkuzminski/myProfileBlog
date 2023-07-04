@@ -6,11 +6,18 @@ import "./AddPost.css"
 //router
 import { useNavigate } from "react-router-dom"
 
+//firebase
+import { collection, addDoc } from "firebase/firestore"
+
+//firebase config
+import { db } from "../../firebase/config"
+
+
 export default function AddPost() {
 	const navigate = useNavigate()
 	const [title, setTitle] = useState("")
 	const [article, setArticle] = useState("")
-	const [tag, setTag] = useState("")
+	const [tag, setTag] = useState("react")
 
 	const resetForm = () => {
 		setTitle("")
@@ -21,17 +28,17 @@ export default function AddPost() {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 
-		//data to be sent
+		const ref = collection(db,'articles')
+		
 		const data = {
 			title,
 			article,
 			tag,
-			// add random id in submit handler
 		}
 
-		//firebase collection ref
+		await addDoc(ref, data)
 
-		//add doc function
+		navigate('/')
 
 		resetForm()
 	}
