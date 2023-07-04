@@ -39,11 +39,14 @@ export default function TopMenu() {
 					<NavLink className='navigationLink' to='/web-dev'>
 						<li className='topListItem'>Web-dev</li>
 					</NavLink>
+					{user && <NavLink className='navigationLink' to='/add-post'>
+						<li className="topListItem">Post</li>
+					</NavLink>}
 				</ul>
 			</div>
 			<div className='topRight'>
 				<img className='topImg' onClick={() => {navigate('/login')}} src={profile} alt='this is us' />
-				{user && (<span className="logout-btn" onClick={logout}>wyloguj <i className="fa-solid fa-arrow-right-from-bracket"></i></span>)}
+				{user && (<span className="logout-btn" onClick={logout}><i style={{fontSize: "24px"}} className="fa-solid fa-arrow-right-from-bracket"></i></span>)}
 			</div>
 		</div>
 	)
