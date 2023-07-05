@@ -14,10 +14,12 @@ all text
 	margin: 0;
 }
 
+/* no outline on focus */
 *:focus {
     outline: none;
 }
 
+/* scroll wont take size of document */
 html {
     overflow-y: overlay;
 }

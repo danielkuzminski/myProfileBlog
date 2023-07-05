@@ -1,13 +1,14 @@
 //styles
 import "./AboutFirebase"
 
+//hooks
 import { useFirestoreQuery } from "../../hooks/useFiestoreQuery"
 
 export default function AboutFirebase() {
 	const { data: posts } = useFirestoreQuery("firebase")
 
 	return (
-		<div>
+		<>
 			{posts &&
 				posts.map((post) => (
 					<div key={post.id} className='singlePost'>
@@ -17,6 +18,6 @@ export default function AboutFirebase() {
 						<p className='postTopic'>#{post.tag}</p>
 					</div>
 				))}
-		</div>
+		</>
 	)
 }

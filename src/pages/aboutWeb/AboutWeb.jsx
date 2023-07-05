@@ -1,12 +1,14 @@
+//styles
 import "./AboutWeb.css"
 
+//hooks
 import { useFirestoreQuery } from "../../hooks/useFiestoreQuery"
 
 export default function AboutWeb() {
 	const { data: posts } = useFirestoreQuery("web-dev")
 
 	return (
-		<div>
+		<>
 			{posts &&
 				posts.map((post) => (
 					<div key={post.id} className='singlePost'>
@@ -16,6 +18,6 @@ export default function AboutWeb() {
 						<p className='postTopic'>#{post.tag}</p>
 					</div>
 				))}
-		</div>
+		</>
 	)
 }

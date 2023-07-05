@@ -1,16 +1,19 @@
-
 //styles
 import './Posts.css'
 
-// import { useCollection } from '../hooks/useCollection'
+//hooks
 import { useFirebaseData } from '../hooks/useFirebaseData'
+// import { useCollection } from '../hooks/useCollection'
+
+//router
+import { Link } from 'react-router-dom'
 
 export default function Posts() {
 
-  //real time data (working!)
+  //real time data
   // const {data: posts} = useCollection('articles')
 
-  //data
+  //cloud data
   const {data: posts} = useFirebaseData('articles')
 
   return (
@@ -18,9 +21,12 @@ export default function Posts() {
       <div key={post.id} className='singlePost'>
         <span className='postTitle'>{post.title}</span>
         <p className='postText'>{post.article}</p>
+        <Link className='see-more' to={`/posts/${post.id}`}>more...</Link>
+        <br />
         <br />
         <p className='postTopic'>#{post.tag}</p>
       </div>
-    ))}</div>
+    ))}
+    </div>
   )
 }

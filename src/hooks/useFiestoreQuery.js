@@ -1,4 +1,7 @@
+//react
 import { useState, useEffect } from "react";
+
+//firebase & config
 import { query,collection, getDocs, where } from "firebase/firestore";
 import { db } from "../firebase/config";
 

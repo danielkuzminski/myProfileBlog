@@ -14,6 +14,7 @@ import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import AboutMe from './pages/aboutMe/AboutMe';
 import AddPost from './pages/addPost/AddPost';
+import SinglePost from './pages/singlePost/SinglePost';
 
 //router
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -38,6 +39,7 @@ function App() {
           <Route path='/signup' element={user ? <Navigate to='/' /> : <Signup />} />
           <Route path='/about-me' element={<AboutMe />} />
           <Route path='/add-post' element={user ? <AddPost /> : <Navigate to='/' />} />
+          <Route path='/posts/:id' element={<SinglePost/>} />
         </Routes>   
       </BrowserRouter>
     </div>
