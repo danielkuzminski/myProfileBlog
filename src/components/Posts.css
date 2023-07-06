@@ -7,7 +7,7 @@
 
 .singlePost {
     width: 70%;
-    margin: 25px 25px 45px 100px;
+    margin: 25px 25px 25px 100px;
 }
 
 .postTitle {
@@ -37,6 +37,7 @@
     font-size: 16px;
     color: #777;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .see-more {

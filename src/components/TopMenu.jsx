@@ -5,7 +5,7 @@ import "./TopMenu.css"
 import profile from "../assets/profil.jpg"
 
 //router
-import { NavLink, Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
 //hooks
@@ -46,7 +46,8 @@ export default function TopMenu() {
 			</div>
 			<div className='topRight'>
 				<img className='topImg' onClick={() => {navigate('/login')}} src={profile} alt='this is us' />
-				{user && (<span className="logout-btn" onClick={logout}><li className="topListItem"><span className="gg-log-off"></span></li></span>)}
+				{/* {user && (<span className="logout-btn" onClick={logout}><li className="topListItem"><span className="gg-log-off"></span></li></span>)} */}
+				{user && (<li style={{marginLeft: '10px'}} className="topListItem" onClick={logout}>logout</li>)}
 			</div>
 		</div>
 	)

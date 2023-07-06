@@ -24,7 +24,7 @@ export default function Posts() {
         <Link className='see-more' to={`/posts/${post.id}`}>more...</Link>
         <br />
         <br />
-        <p className='postTopic'>#{post.tag}</p>
+        <Link to={`/${post.tag}`} className='postTopic'>#{post.tag}</ Link>
       </div>
     ))}
     </div>

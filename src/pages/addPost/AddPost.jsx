@@ -8,10 +8,13 @@ import "./AddPost.css"
 import { useNavigate } from "react-router-dom"
 
 //firebase
-import { collection, addDoc } from "firebase/firestore"
+import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 
 //firebase config
 import { db } from "../../firebase/config"
+
+//hooks
+import {useAuthContext} from '../../hooks/useAuthContext'
 
 
 export default function AddPost() {
@@ -19,6 +22,10 @@ export default function AddPost() {
 	const [title, setTitle] = useState("")
 	const [article, setArticle] = useState("")
 	const [tag, setTag] = useState("react")
+
+	const {user} = useAuthContext()
+
+	const uid = user.uid
 
 	const resetForm = () => {
 		setTitle("")
@@ -37,7 +44,9 @@ export default function AddPost() {
 			tag,
 		}
 
-		await addDoc(ref, data)
+		const createdAt = serverTimestamp()
+
+		await addDoc(ref, {...data, createdAt, uid})
 
 		navigate('/')
 
